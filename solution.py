@@ -18,7 +18,7 @@ def solution(x_success: int,
     count = np.array([control_sales, test_sales])
     nobs = np.array([control_leads, test_leads])   
                
-    z_stat, p_value = proportions_ztest(count, nobs)
+    z_stat, p_value = proportions_ztest(count, nobs, alternative = 'smaller')
     ans = p_value < alpha
                
     return ans # Ваш ответ, True или False
